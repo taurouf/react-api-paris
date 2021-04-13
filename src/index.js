@@ -1,39 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-  Col,
-  Container,
-  Row,
-} from 'react-bootstrap';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux'
+import store from './redux/store'
 
-import NavBar from './components/navbar';
-import ListMovies from './components/list-movies';
-import SignIn from './components/sign-in';
-import Advertising from './components/advertising';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.scss';
-
-const App = () => (
-  <div>
-    <NavBar />
-    <Container>
-      <Row className="mt-4">
-        <Col xs={8}>
-          <ListMovies genre="Aventure" />
-          <hr className="my-4" />
-          <ListMovies genre="Horreur" />
-          <hr className="my-4" />
-          <ListMovies genre="Comédie" />
-        </Col>
-        <Col xs={3}>
-          <SignIn />
-          <hr className="my-4" />
-          <Advertising />
-        </Col>
-      </Row>
-    </Container>
-  </div>
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
 );
 
-ReactDOM.render(<App />, document.getElementById('app'));
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

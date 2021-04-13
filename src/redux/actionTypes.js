@@ -1,0 +1,3 @@
+export const UPDATE_RESULT_ITEMS = "UPDATE_ITEMS";
+export const UPDATE_NHITS = "UPDATE_NHITS";
+export const UPDATE_LOADING = "UPDATE_LOADING";
